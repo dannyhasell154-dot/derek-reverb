@@ -1,0 +1,9 @@
+No software needed, just a free GitHub account:
+1. github.com > New repository (name: derek-reverb) > "uploading an existing file".
+2. Unzip this folder and drag ALL its contents in (including the hidden .github folder), commit.
+3. Open the Actions tab > "Build Derek Reverb" > wait ~5-10 min for the green tick.
+4. Click the finished run > Artifacts > download DerekReverb-Windows (or macOS).
+5. Unzip, copy "Derek Reverb.vst3" to:
+   Windows: C:\Program Files\Common Files\VST3
+   macOS:   /Library/Audio/Plug-Ins/VST3
+6. FL Studio: Options > Manage plugins > Find installed plugins.
