@@ -11,17 +11,20 @@ fail-fast: false
 matrix:
 os: [windows-latest, macos-latest]
 runs-on: ${{ matrix.os }}
-steps:
+    steps:
 - uses: actions/checkout@v4
 
-- name: Configure
-run: cmake -B build -DCMAKE_BUILD_TYPE=Release
+      - name: Configure
+        run: cmake -B build -DCMAKE_BUILD_TYPE=Release
 
 - name: Build
 run: cmake --build build --config Release --parallel
 
 - name: Collect VST3
 shell: bash
+run: |
+mkdir -p artifacts
+find build -name "*.vst3" -exec cp -R {} artifacts/ \;
 run: |
 mkdir out
 find build -name "*.vst3" -maxdepth 6 -exec cp -R {} out/ \;
